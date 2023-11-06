@@ -14,8 +14,9 @@
 
         $nome = $_REQUEST['nome'];
         $email = $_REQUEST['email'];
+        $senha = md5($_REQUEST['senha']); //criptografando os dados com MD5
 
-        $sql = "INSERT INTO pessoa (nome, email) VALUES ('$nome', '$email')";
+        $sql = "INSERT INTO pessoa (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
 
         if ($conn->query($sql) == TRUE)
         {
