@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../js/util.js"></script>
+</head>
+<body>
 <?php
 
     include_once("../conn.php");
@@ -18,6 +28,7 @@
             echo "<td>" . $linha["nome"] . "</td>";
             echo "<td>" . $linha["email"] . "</td>";
             echo "<td> <a href='select.php?email=" . $linha["email"] . "'>Detalhes</a> </td>";
+            echo "<td> <a href='delete.php?id=" . $linha["idPessoa"] . "' onClick='return confirmar()' >Excluir</a> </td>";
             echo "</tr>"; //fechar a linha
         }    
 
@@ -31,4 +42,10 @@
 
     $conn->close();
 
-?>
+?>   
+    
+</body>
+</html>
+
+
+
